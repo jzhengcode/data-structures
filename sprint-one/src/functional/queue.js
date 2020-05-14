@@ -8,13 +8,20 @@ var Queue = function() {
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-    var update = Object.keys(someInstance.store).length + 1;
-    someInstance.store[update] = value;
+    var entryName;
+    if (Object.keys(someInstance.store).length === 0){
+      entryName = 0;
+    } else {
+      entryName = Math.max(Object.keys(someInstance.store)) + 1;
+    }
+
+    someInstance.store[entryName] = value;
   };
 
   someInstance.dequeue = function() {
-    var valListEnd = someInstance.store[1];
-    delete someInstance.store[1];
+    var oldestIndex = Math.min(...Object.keys(someInstance.store));
+    var valListEnd = someInstance.store[oldestIndex];
+    delete someInstance.store[oldestIndex];
     return valListEnd;
   };
 
