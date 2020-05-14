@@ -9,7 +9,7 @@ var Queue = function() {
 
   someInstance.enqueue = function(value) {
     var entryName;
-    if (Object.keys(someInstance.store).length === 0){
+    if (Object.keys(someInstance.store).length === 0) {
       entryName = 0;
     } else {
       entryName = Math.max(Object.keys(someInstance.store)) + 1;
