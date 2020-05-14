@@ -24,7 +24,7 @@ var Queue = function() {
     var oldestIndex = Math.min(...Object.keys(someInstance.store));
     var valListEnd = someInstance.store[oldestIndex];
     delete someInstance.store[oldestIndex];
-    if (sizeStorage > 0){
+    if (sizeStorage > 0) {
       sizeStorage--;
     }
     return valListEnd;
