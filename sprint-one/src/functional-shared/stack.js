@@ -39,9 +39,7 @@ var stackMethods = {
       if (this.sizeStorage === 0) {
         // this.storage[0] = value;
         // this.sizeStorage++;
-
-        var update = this.storage + 1;
-        this.storage[update] = value;
+        this.storage[0] = value;
         this.sizeStorage++;
       } else {
         var maxIndex = Math.max(Object.keys(this.storage));
@@ -51,7 +49,9 @@ var stackMethods = {
       }
     },
     pop: function(){
-      var maxIndex = Math.max(Object.keys(this.storage));
+      debugger;
+      var keys = Object.keys(this.storage);
+      var maxIndex = Math.max(...Object.keys(this.storage));
       var popped = this.storage[maxIndex];
       delete this.storage[maxIndex];
 
