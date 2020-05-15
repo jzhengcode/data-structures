@@ -21,7 +21,7 @@ var extend = function(to, from) {
 };
 
 var queueMethods = {
-  // declare a push function that will take in a value
+  // declare enqueue function that will take in a value
     // if size counter reads 0
       // then the input value will be stored in storage with an index value of 0
       // increase the size counter by 1
@@ -29,8 +29,9 @@ var queueMethods = {
       // retrieve the indexes in storage and find the high number
       // the new index that will be used to store the input value will be that number
       // store the value in the new index
+      // increase size counter by 1
 
-  // declare a pop function
+  // declare denqueue function
     // retrieve the indexes in storage and find the lowest number
     // find that value that associated with that lowest number and save it
     // deleted the entry associated with the lowest number
@@ -39,10 +40,17 @@ var queueMethods = {
 
   // declare a size function
     // return the size counter
-  push: function(value){
-
+  enqueue: function(value){
+    if (this.sizeStorage === 0) {
+      this.storage[0] = value;
+      this.sizeStorage++;
+    } else {
+      var update = Math.max(Object.keys(this.storage));
+      this.storage[update] = value;
+      this.sizeStorage++;
+    }
   },
-  pop: function(){
+  denqueue: function(){
 
   },
   size: function(){
