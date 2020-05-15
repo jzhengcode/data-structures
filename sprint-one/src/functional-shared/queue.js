@@ -23,7 +23,7 @@ var queueMethods = {
 
     this.sizeStorage++;
   },
-  dequeue: function( ){
+  dequeue: function() {
     debugger;
     var oldestIndex = Math.min(...Object.keys(this.storage));
     var deq = this.storage[oldestIndex];
