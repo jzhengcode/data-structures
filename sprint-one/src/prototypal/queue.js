@@ -26,13 +26,13 @@ var queueMethods = {
   dequeue: function() {
     var deq = this.storage[this.minIndex];
     delete this.storage[this.minIndex];
-    if (this.sizeStorage > 0){
+    if (this.sizeStorage > 0) {
       this.sizeStorage--;
       this.minIndex++;
     }
     return deq;
   },
-  size: function(){
+  size: function() {
     return this.sizeStorage;
   }
 };
