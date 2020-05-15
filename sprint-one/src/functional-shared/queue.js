@@ -7,6 +7,17 @@ var Queue = function() {
     // create a counter tracks the size of the storage unit
   // push methods in the object
   // return the object
+  var someInstance = {};
+  someInstance.storage = {};
+  someInstance.sizeStorage = 0;
+  extend(someInstance, queueMethods);
+  return someInstance;
+};
+
+var extend = function(to, from) {
+  for (var key in from) {
+    to[key] = from[key];
+  }
 };
 
 var queueMethods = {
@@ -28,6 +39,15 @@ var queueMethods = {
 
   // declare a size function
     // return the size counter
+  push: function(value){
+
+  },
+  pop: function(){
+
+  },
+  size: function(){
+    return this.sizeStorage;
+  }
 };
 
 
