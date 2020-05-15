@@ -45,13 +45,20 @@ var queueMethods = {
       this.storage[0] = value;
       this.sizeStorage++;
     } else {
-      var update = Math.max(Object.keys(this.storage));
+      var update = Math.max(Object.keys(this.storage)) + 1;
       this.storage[update] = value;
       this.sizeStorage++;
     }
   },
-  denqueue: function(){
-
+  dequeue: function(){
+    debugger;
+    var oldestIndex = Math.min(...Object.keys(this.storage));
+    var deq = this.storage[oldestIndex];
+    delete this.storage[oldestIndex];
+    if (this.sizeStorage > 0){
+      this.sizeStorage--;
+    }
+    return deq;
   },
   size: function(){
     return this.sizeStorage;
