@@ -5,7 +5,7 @@ class Stack {
     this.maxIndex;
   }
 
-  push(value){
+  push(value) {
     if (this.sizeStorage === 0) {
       this.storage[0] = value;
       this.maxIndex = 0;
@@ -17,7 +17,7 @@ class Stack {
     }
   }
 
-  pop(){
+  pop() {
     if (this.sizeStorage > 0) {
       this.sizeStorage--;
     }
@@ -28,7 +28,7 @@ class Stack {
     return pop;
   }
 
-  size(){
+  size() {
     return this.sizeStorage;
   }
 }
