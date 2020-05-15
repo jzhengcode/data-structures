@@ -14,6 +14,7 @@ var queueMethods = {
   enqueue: function(value) {
     if (this.sizeStorage === 0) {
       this.storage[0] = value;
+      this.minIndex = 0;
       this.sizeStorage++;
     } else {
       var update = this.maxIndex + 1;
@@ -23,6 +24,13 @@ var queueMethods = {
     }
   },
   dequeue: function() {
+    var deq = this.storage[this.minIndex];
+    delete this.storage[this.minIndex];
+    if (this.sizeStorage > 0){
+      this.sizeStorage--;
+      this.minIndex++;
+    }
+    return deq;
   },
   size: function(){
     return this.sizeStorage;
