@@ -28,7 +28,6 @@ var stackMethods = {
     }
   },
   pop: function() {
-    debugger;
     var keys = Object.keys(this.storage);
     var maxIndex = Math.max(...Object.keys(this.storage));
     var popped = this.storage[maxIndex];
