@@ -9,7 +9,7 @@ var Queue = function() {
 
 Queue.prototype = {
   enqueue: function(value) {
-    if (this.sizeStorage === 0){
+    if (this.sizeStorage === 0) {
       this.storage[0] = value;
       this.minIndex = 0;
       this.maxIndex = 0;
@@ -20,7 +20,7 @@ Queue.prototype = {
       this.sizeStorage++;
     }
   },
-  dequeue: function(){
+  dequeue: function() {
     if (this.sizeStorage > 0) {
       this.sizeStorage--;
     }
@@ -30,7 +30,7 @@ Queue.prototype = {
     this.minIndex++;
     return deq;
   },
-  size: function(){
+  size: function() {
     return this.sizeStorage;
   },
   constructor: Queue
