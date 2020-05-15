@@ -1,6 +1,4 @@
 var Stack = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
   this.storage = {};
   this.sizeStorage = 0;
   this.maxIndex;
@@ -8,7 +6,7 @@ var Stack = function() {
 
 
 Stack.prototype = {
-  push: function(value){
+  push: function(value) {
     if (this.sizeStorage === 0) {
       this.storage[0] = value;
       this.maxIndex = 0;
@@ -19,8 +17,8 @@ Stack.prototype = {
       this.sizeStorage++;
     }
   },
-  pop: function(){
-    if (this.sizeStorage > 0){
+  pop: function() {
+    if (this.sizeStorage > 0) {
       this.sizeStorage--;
     }
 
@@ -29,7 +27,7 @@ Stack.prototype = {
     this.maxIndex--;
     return pop;
   },
-  size: function(){
+  size: function() {
     return this.sizeStorage;
   },
   constructor: Stack
