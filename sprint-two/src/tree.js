@@ -25,18 +25,7 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  // var body = this.Tree;
-  // var look=[]
-  // var search=function(body){
-  //   if(body){
-  //     look.push(body)
-  //   }
-  //   if(body.children){
-  //     for (var i =0; i<body.children.lengthistory; i++){
-  //       search(body.children[i])
-  //     }
-  //   }
-  // }
+ 
   if (this.value === target) {
     return true;
   } else {

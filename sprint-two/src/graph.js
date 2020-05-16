@@ -1,4 +1,11 @@
+// I - Nothing
+// O - a function that creates a network of nodes that are interconnected
+// C - 
+// E - 
 
+// The purpose of calling this class is to create a network of nodes that are interconnected with each other. These nodes all have the same set of prototype methods
+
+// Explanation: the Graph class it self have inputs but the protoype methods that it passes failed loop ups to do. The output of Graph will instaite a new network of graphs that all share prototype methods
 
 // Instantiate a new graph
 var Graph = function() {
