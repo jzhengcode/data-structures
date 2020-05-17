@@ -8,9 +8,9 @@ var Tree = function(value) {
   
 };
 
-var extend = function(to, from){
-  for(var key in from){
-    to[key]=from[key];
+var extend = function(to, from) {
+  for (var key in from) {
+    to[key] = from[key];
   }
 
 };
@@ -41,4 +41,6 @@ treeMethods.contains = function(target) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ addChild: O(1)
+ contains: O(n)
  */
