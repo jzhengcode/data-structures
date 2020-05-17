@@ -69,6 +69,15 @@ searchMethod.contains = function(value) {
     C - value has to be a number
     E - none
     */
+
+    // look at value property at current node
+    // if the value at the current node matches the input value
+      // return true;
+    // if the value at the current node is higher
+      // look through the right side the current node
+    // if the value at the current node is lower
+      // look through the left property of the current node
+    
   };
   searchMethod.depthFirstLog = function(func) {
     /*
@@ -79,4 +88,5 @@ searchMethod.contains = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ O(log n)
  */
