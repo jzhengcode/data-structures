@@ -34,35 +34,30 @@ searchMethod.insert = function (value) {
     C - value has to be a number
     E - if the left or right property is occupied, move down BST 
     */
-   //if this.value is undefined the create a new tree
-   // if input value > current node value
-     // and current node left isn't occupied
-       // create new node
-     // 
 
-    var currentNode = this;
-    if(currentNode.value > value){
-      if (currentNode.left === null){
-        currentNode.left = BinarySearchTree(value);
-      } else {
-        currentNode = currentNode.left;
-        currentNode.insert(BinarySearchTree(value));
-      }
-    }
+    // if the input value is smaller than the value at the current node and the left property is empty
+      // make node in left node
+    // if the inout value is bigger than the value at the current node and the right property is empty
+      // make node in right node
+    // if the input value doesn't already exist and is smaller than the current current value
+      // run insert on the right node
+    // if the input value doesn't already exist and is bigger than the current current value
+      // run insert on the left node
 
-    if(currentNode.value < value){
-      if (currentNode.right === null){
-        currentNode.right = BinarySearchTree(value);
-      } else {
-        currentNode = currentNode.right;
-        currentNode.insert(value);
-      }
-    }
-   //if the value being passed in is greater than the first node set in this.right
-   //if it is less than value put it into this.left 
+   if (value < this.value && this.left === null) {
+     this.left = BinarySearchTree(value);
+   } else if (value > this.value && this.right === null){
+     this.right = BinarySearchTree(value);
+   } else if (value !== this.value && value < this.value){
+     var nextNode = this.left;
+     nextNode.insert(value);
+   } else if (value !== this.value && value > this.value){
+     var nextNode = this.right;
+     nextNode.insert(value);
+   }
 }
 
-searchMethod.contains = function(value) {
+searchMethod.contains = function(target) {
     /*
     I - some number value
     O - boolean
@@ -70,14 +65,32 @@ searchMethod.contains = function(value) {
     E - none
     */
 
-    // look at value property at current node
     // if the value at the current node matches the input value
       // return true;
-    // if the value at the current node is higher
-      // look through the right side the current node
-    // if the value at the current node is lower
-      // look through the left property of the current node
+    // if the input value is lower but left node is
+      // return false
+    // if the input value higher but the right node is empty
+      // return false
+    // if input value is higher and the right node isn't empty
+      // call method on the right node
+   // if input value is lower and the left node isn't empty
+      // call method on left node
     
+    if(this.value === target){
+      return true;
+    } else if (this.value < target && this.left === null){
+      return false;
+    } else if (this.value > target && this.right === null){
+      return false;
+    } else if (target < this.value && this.left !== null) {
+      var searching = this.left;
+      return searching.contains(target);
+    } else if (target > this.value && this.right !== null){
+      var searching = this.right;
+      return searching.contains(target); 
+    }
+
+        
   };
   searchMethod.depthFirstLog = function(func) {
     /*
