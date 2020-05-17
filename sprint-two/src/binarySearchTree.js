@@ -8,11 +8,6 @@ var BinarySearchTree = function(value) {
   will have a left and right property each being objects 
   
   */
-//  var newTree={
-//   left:{},
-//   right:{}
-//  };
-//    newTree.value=value;
   var newBinary={};
   newBinary.value=value
   newBinary.left = null;
@@ -20,12 +15,14 @@ var BinarySearchTree = function(value) {
   extend(newBinary, searchMethod)
   return newBinary;
 };
+
 var extend = function(to, from){
   for(var key in from){
     to[key]=from[key];
   }
 
 };
+
 var searchMethod={};
 searchMethod.insert = function (value) {
     /*
@@ -94,12 +91,33 @@ searchMethod.contains = function(target) {
   };
   searchMethod.depthFirstLog = function(func) {
     /*
-    I - some function
-    O -  
+    I - some function that takes in the current node vale
+    O -  there is no output but side effect
+    C - input has to be a function
+    E - none
     */
+
+    // run into function on current node value
+
+    // if the left node isn't empty
+      // run function on left node
+
+    // if the right node isn't empty
+      // run function on right node
+
+    func(this.value);
+
+    if(this.left !== null){
+      this.left.depthFirstLog(func);
+    }
+
+    if(this.right !== null){
+      this.right.depthFirstLog(func);
+    }
   };
 
 /*
  * Complexity: What is the time complexity of the above functions?
- O(log n)
+ insert & contain: O(log n)
+ depthFirstLog: O(n)
  */
