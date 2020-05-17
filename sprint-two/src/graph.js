@@ -1,7 +1,7 @@
 // I - Nothing
 // O - a function that creates a network of nodes that are interconnected
-// C - 
-// E - 
+// C - output has to be a function
+// E - no edge cases
 
 // The purpose of calling this class is to create a network of nodes that are interconnected with each other. These nodes all have the same set of prototype methods
 
@@ -9,10 +9,21 @@
 
 // Instantiate a new graph
 var Graph = function() {
+  // has nodes array - storage potential nodes that it can be connected to
+  // edge object - storages the reference to the nodes
 };
 
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
+  /* 
+  I - some node
+  O - none, side effect: node is added to the graph
+  C - none
+  E - none 
+  */
+
+  // Explanation: Will add an input node to the nodes array in the graph
+
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
@@ -27,7 +38,7 @@ Graph.prototype.removeNode = function(node) {
 Graph.prototype.hasEdge = function(fromNode, toNode) {
 };
 
-// Connects two nodes in a graph by adding an edge between them.
+// Connects two nodes in a graph by adding an edge between them.f
 Graph.prototype.addEdge = function(fromNode, toNode) {
 };
 
