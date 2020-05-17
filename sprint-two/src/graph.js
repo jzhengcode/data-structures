@@ -11,6 +11,9 @@
 var Graph = function() {
   // has nodes array - storage potential nodes that it can be connected to
   // edge object - storages the reference to the nodes
+  var newNode = Object.create(Graph.prototype);
+  newNode.nodes = [];
+  newNode.edges = {};
 };
 
 // Add a node to the graph, passing in the node's value.
@@ -24,6 +27,9 @@ Graph.prototype.addNode = function(node) {
 
   // Explanation: Will add an input node to the nodes array in the graph
 
+  // input node position in nodes array will have index of a number that's the length of the array
+  // put node into nodes array
+  // put reference in edges object
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
