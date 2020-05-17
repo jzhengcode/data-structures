@@ -14,6 +14,7 @@ var Graph = function() {
   var newNode = Object.create(Graph.prototype);
   newNode.nodes = [];
   newNode.edges = {};
+  return newNode;
 };
 
 // Add a node to the graph, passing in the node's value.
@@ -30,14 +31,53 @@ Graph.prototype.addNode = function(node) {
   // input node position in nodes array will have index of a number that's the length of the array
   // put node into nodes array
   // put reference in edges object
+
+  var index = this.nodes.length;
+  this.nodes.push(node);
+  this.edges[index] = [];  
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
+  /*
+  I - some node
+  O - boolean
+  C - none
+  E - none
+  */
+  //Explanation: will look through nodes array to see if node exists
+  
+  for (var i = 0; i < this.nodes.length; i++){
+    if(this.nodes[i] === node){
+      return true;
+    }
+    return false;
+  }
+
 };
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
+  /* 
+  I - some node
+  O - nothing, side effect is the graph changes -> something is removed
+  C - node has to exist inside the graph
+  E - if the node doesn't exist inside the graph, don't do anything  
+   */
+  
+// Explanation: will traverse through the graph, if there is a node, remove it -> have to remove from edges
+
+// check in nodes array to see if node exists
+// if it does
+  // removed from nodes and edges -> have to set to undefined or else nodes will shift
+
+  var index = this.nodes.indexOf(node);
+
+  if (index > -1){
+    this.nodes[index] = undefined;
+    this.nodes[index] = undefined;
+  }
+
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
